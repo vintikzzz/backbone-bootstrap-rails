@@ -30,10 +30,6 @@
             %span.icon-bar
           %a.brand(href="#") BackboneTwitterBootstrap
           .container.nav-collapse
-            %ul.nav
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
             #add-bar
 
     .container
@@ -43,13 +39,10 @@
           .span9
             = yield
           .span3
-            .well.sidebar-nav
-              %h3 Sidebar
-              %ul.nav.nav-list
-                %li.nav-header Sidebar
-                %li= link_to "Link 1", "/path1"
-                %li= link_to "Link 2", "/path2"
-                %li= link_to "Link 3", "/path3"
+            %h3 Admin access 
+            %br
+            %p email: test@test.test
+            %p password: 123456
     
       %footer
         %p &copy; Pavel Tatarsky 2012
