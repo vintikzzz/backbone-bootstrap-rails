@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
   def index
-    @posts = Post.all
+    @posts = Post.order_by([:created_at, :desc])
   end
 
   def show

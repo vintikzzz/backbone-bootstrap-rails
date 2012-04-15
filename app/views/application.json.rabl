@@ -6,5 +6,5 @@ node :guestUser do
   partial("users/show", object: User.new)
 end
 node :posts do
-  partial("posts/index", object: Post.all)
+  partial("posts/index", object: Post.order_by([:created_at, :desc]))
 end
