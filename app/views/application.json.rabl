@@ -1,6 +1,6 @@
 object false
 node :currentUser do
-  partial("users/show", object: current_user || User.new)
+  partial("users/show", object: user_signed_in? ? current_user : User.new)
 end
 node :guestUser do
   partial("users/show", object: User.new)
