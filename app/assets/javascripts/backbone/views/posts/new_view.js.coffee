@@ -11,7 +11,6 @@ class BackboneTwitterBootstrap.Views.Posts.NewView extends Backbone.View
 
     @model = new @collection.model()
     @model.bind("change:errors", () =>
-      @render()
       @renderErrors()
     )
 

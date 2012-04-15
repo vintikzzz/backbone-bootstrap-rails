@@ -10,7 +10,6 @@ class BackboneTwitterBootstrap.Views.Sessions.NewView extends Backbone.View
     super(options)
 
     @model.bind("change:errors", () =>
-      @render()
       @renderErrors()
     )
 

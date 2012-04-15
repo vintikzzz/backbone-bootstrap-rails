@@ -8,7 +8,6 @@ class BackboneTwitterBootstrap.Views.Posts.EditView extends Backbone.View
 
   initialize: ->
     @model.bind("change:errors", () =>
-      @render()
       @renderErrors()
     )
 

@@ -5,6 +5,8 @@ class BackboneTwitterBootstrap.Views.Common.ErrorView extends Backbone.View
 
   render: ->
     @errors = @model.get('errors')
+    @form = $("form[name=" + @model.paramRoot + "]")
+    @cleanErrors()
     if @errors?
       if @errors.error?
         $(@el).html(@template(@errors))
@@ -12,7 +14,12 @@ class BackboneTwitterBootstrap.Views.Common.ErrorView extends Backbone.View
 
     return this
 
+  cleanErrors: ->
+    @form.find(".error").removeClass("error")
+    @form.find(".help-block").remove()
+
+
   markErrorField: (name, error) ->
-    field = $(":input[name=" + name + "]")
+    field = @form.find(":input[name=" + name + "]")
     field.parent().append("<div class='help-block'>" + error + "</div>")
     field.parent().parent().addClass("error")
