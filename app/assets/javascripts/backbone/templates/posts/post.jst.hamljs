@@ -1,0 +1,11 @@
+%td= post.title
+%td= post.truncate
+
+- var show_link = "#/posts/" + post.id
+- var edit_link = "#/posts/" + post.id + "/edit"
+- var destroy_link = "#/posts/" + post.id + "/destroy"
+%td
+  %a.btn.btn-min1{href: show_link} Show
+  :if user.abilities.manage_posts == true
+    %a.btn.btn-min1{href: edit_link} Edit
+    %a.destroy.btn.btn-min1.btn-danger{href: destroy_link} Destroy
