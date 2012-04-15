@@ -16,6 +16,8 @@ class BackboneTwitterBootstrap.Views.Posts.EditView extends Backbone.View
     e.preventDefault()
     e.stopPropagation()
 
+    @model.unset("errors", silent: true)
+
     @model.save(null,
       success : (post) =>
         @model = post

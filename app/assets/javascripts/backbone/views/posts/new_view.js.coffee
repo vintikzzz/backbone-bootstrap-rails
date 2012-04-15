@@ -19,7 +19,7 @@ class BackboneTwitterBootstrap.Views.Posts.NewView extends Backbone.View
     e.preventDefault()
     e.stopPropagation()
 
-    @model.unset("errors")
+    @model.unset("errors", silent: true)
 
     @model.save(null,
       success: (post) =>
