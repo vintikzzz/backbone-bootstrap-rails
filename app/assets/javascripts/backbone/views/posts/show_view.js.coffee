@@ -8,6 +8,7 @@ class BackboneTwitterBootstrap.Views.Posts.ShowView extends Backbone.View
 
   initialize: () ->
     @options.user.bind('change', @render, this)
+    @model.bind('change', @render, this)
 
   destroy: () ->
     @model.destroy()

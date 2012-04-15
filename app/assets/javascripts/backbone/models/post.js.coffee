@@ -1,5 +1,6 @@
 class BackboneTwitterBootstrap.Models.Post extends Backbone.Model
   paramRoot: 'post'
+  urlRoot: '/posts'
 
   defaults:
     title: null
