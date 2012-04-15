@@ -1,0 +1,16 @@
+development:
+  host: localhost
+  database: backbone_twitter_bootstrap_development
+
+test:
+  host: localhost
+  database: backbone_twitter_bootstrap_test
+
+# set these environment variables on your prod server
+production:
+  uri: <%= ENV['MONGOHQ_URL'] %>
+  # slaves:
+  #   - host: slave1.local
+  #     port: 27018
+  #   - host: slave2.local
+  #     port: 27019

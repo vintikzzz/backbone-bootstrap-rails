@@ -1,0 +1,7 @@
+%ul.nav.pull-right
+  :if abilities.signout == true
+    %li 
+      %a{href: "#/signout"} Sign out
+  :if abilities.signin == true
+    %li 
+      %a{href: "#/signin"} Sign in

@@ -1,0 +1,16 @@
+%form#edit-post{name: "post"}
+  %fieldset
+    %legend Edit
+    .control-group
+      %label.control-label{for: "title"} Title:
+      .controls
+        %input#title.span6{name: "title", type: "text", value: title}
+
+    .control-group
+      %label.control-label{for: "content"} Content:
+      .controls
+        %textarea#content.span6{name: "content", rows: 15}= content
+
+    .form-actions
+      %input.btn.btn-primary{type: "submit"}
+      %a.btn{href: "#/posts/index"} Cancel
