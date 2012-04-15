@@ -9,6 +9,3 @@ node :abilities do
     manage_posts: @ability.can?(:manage, Post) 
   }
 end
-node(:isNew) do |n|
-  @user.new?
-end

@@ -9,7 +9,7 @@ class BackboneTwitterBootstrap.Models.Session extends Backbone.Model
     'delete': '/users/sign_out.json'
   }
   isNew: ->
-    @user.get('isNew')
+    @user.get('abilities').signin
 
   sync: (method, model, options) ->
     if model.methodUrl && model.methodUrl[method.toLowerCase()]
