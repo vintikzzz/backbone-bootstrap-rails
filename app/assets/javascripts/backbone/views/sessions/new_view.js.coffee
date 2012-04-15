@@ -1,6 +1,6 @@
 BackboneTwitterBootstrap.Views.Sessions ||= {}
 
-class BackboneTwitterBootstrap.Views.Sessions.NewView extends Backbone.View
+class BackboneTwitterBootstrap.Views.Sessions.NewView extends BackboneTwitterBootstrap.Views.Common.ErrorView
   template: JST["backbone/templates/sessions/new"]
 
   events:
@@ -35,11 +35,5 @@ class BackboneTwitterBootstrap.Views.Sessions.NewView extends Backbone.View
     $(@el).html(@template(@model.toJSON() ))
 
     this.$("form").backboneLink(@model)
-
-    return this
-
-  renderErrors: ->
-    view = new BackboneTwitterBootstrap.Views.Common.ErrorView({model : @model})
-    $("form").prepend(view.render().el)
 
     return this
