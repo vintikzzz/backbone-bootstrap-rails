@@ -2,11 +2,11 @@ BackboneTwitterBootstrap::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
-  config.cache_classes = true
+  config.cache_classes = false
 
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
-  config.action_controller.perform_caching = true
+  config.action_controller.perform_caching = false
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
@@ -20,6 +20,7 @@ BackboneTwitterBootstrap::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  config.action_dispatch.best_standards_support = :builtin
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
 
