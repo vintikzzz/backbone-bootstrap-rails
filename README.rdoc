@@ -12,27 +12,27 @@ It is a basic blog application based on Backbone.js and Twitter Bootstrap.
 
 == Getting Started
 
-1. Clone repo:
+Clone repo:
 
   git clone git://github.com/vintikzzz/backbone-twitter-bootstrap.git
 
-2. Go to directory:
+Go to directory:
 
   cd backbone-twitter-bootstrap
 
-3. Load dependencies with bunlder:
+Load dependencies with bunlder:
 
   bundle
 
-4. Add test user with:
+Add test user with:
 
   rake db:seed
 
-5. Run the server:
+Run the server:
 
   rails s
 
-6. Check application at:
+Check application at:
 
   http://localhost:3000
 
