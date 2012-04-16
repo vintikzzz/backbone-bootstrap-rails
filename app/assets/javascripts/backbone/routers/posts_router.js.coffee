@@ -12,7 +12,7 @@ class BackboneTwitterBootstrap.Routers.PostsRouter extends Backbone.Router
     "posts.*"        : "index"
 
   newPost: ->
-    @view = new BackboneTwitterBootstrap.Views.Posts.NewView(collection: @posts)
+    @view = new BackboneTwitterBootstrap.Views.Posts.NewView(collection: @posts, model: new @posts.model())
     @root.html(@view.render().el)
 
   index: ->

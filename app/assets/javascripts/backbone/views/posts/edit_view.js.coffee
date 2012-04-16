@@ -6,11 +6,6 @@ class BackboneTwitterBootstrap.Views.Posts.EditView extends BackboneTwitterBoots
   events :
     "submit #edit-post" : "update"
 
-  initialize: ->
-    @model.bind("change:errors", () =>
-      @renderErrors()
-    )
-
   update : (e) ->
     e.preventDefault()
     e.stopPropagation()

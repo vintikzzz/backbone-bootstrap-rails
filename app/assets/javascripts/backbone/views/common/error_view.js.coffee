@@ -1,6 +1,10 @@
 BackboneTwitterBootstrap.Views.Common ||= {}
 
 class BackboneTwitterBootstrap.Views.Common.ErrorView extends Backbone.View
+  initialize: ->
+    @model.bind("change:errors", () =>
+      @renderErrors()
+    )
 
   cleanErrors: ->
     @form.find(".error").removeClass("error")

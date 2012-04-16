@@ -6,13 +6,6 @@ class BackboneTwitterBootstrap.Views.Sessions.NewView extends BackboneTwitterBoo
   events:
     "submit #new-session": "save"
 
-  constructor: (options) ->
-    super(options)
-
-    @model.bind("change:errors", () =>
-      @renderErrors()
-    )
-
   save: (e) ->
     e.preventDefault()
     e.stopPropagation()

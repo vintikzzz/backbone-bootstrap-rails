@@ -6,14 +6,6 @@ class BackboneTwitterBootstrap.Views.Posts.NewView extends BackboneTwitterBootst
   events:
     "submit #new-post": "save"
 
-  constructor: (options) ->
-    super(options)
-
-    @model = new @collection.model()
-    @model.bind("change:errors", () =>
-      @renderErrors()
-    )
-
   save: (e) ->
     e.preventDefault()
     e.stopPropagation()
