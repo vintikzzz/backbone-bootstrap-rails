@@ -1,5 +1,5 @@
-%td= post.title
-%td= post.truncate
+%td!= post.title
+%td!= post.truncate
 
 - var show_link = "#/posts/" + post.id
 - var edit_link = "#/posts/" + post.id + "/edit"
