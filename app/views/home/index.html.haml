@@ -1,7 +1,1 @@
 #content
-:coffeescript
-  $ =>
-    new BackboneTwitterBootstrap.Routers.AppRouter()
-    new BackboneTwitterBootstrap.Routers.PostsRouter(user: window.currentUser, posts: window.posts)
-    new BackboneTwitterBootstrap.Routers.SessionsRouter(user: window.currentUser, guest: window.guest, token: window.token)
-    Backbone.history.start()

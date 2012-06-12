@@ -9,3 +9,6 @@ node :abilities do
     manage_posts: @ability.can?(:manage, Post) 
   }
 end
+node(:roles) do
+  @user.roles
+end

@@ -1,0 +1,10 @@
+#modal-from-dom.modal.hide.fade
+  .modal-header
+    %a.close{href: "#"} ×
+    %h3 Delete
+  .modal-body
+    %p You are about to delete this post, this procedure is irreversible.
+    %p Do you want to proceed?
+  .modal-footer
+    %a.btn.danger.yes Yes
+    %a.btn.secondary.no No

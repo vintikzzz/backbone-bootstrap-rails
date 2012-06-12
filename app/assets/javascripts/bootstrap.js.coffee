@@ -1,4 +1,11 @@
-jQuery ->
-  $("a[rel=popover]").popover()
-  $(".tooltip").tooltip()
-  $("a[rel=tooltip]").tooltip()
+define [], ->
+  App =
+    Models: {}
+    Collections: {}
+    Routers: {}
+    Views: {
+      Posts: {}
+      Common: {}
+      Sessions: {}
+      Tokens: {}
+    }

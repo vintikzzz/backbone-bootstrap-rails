@@ -1,14 +1,12 @@
-collection @posts, object_root: false
-attributes :id, :created_at, :updated_at
-node :content do |p|
-  strip_tags(p.content)
+object false
+@posts ||= locals[:object][:page]
+node(:current_page) { @posts.current_page }
+node(:total_items) { @posts.total_count }
+node(:per_page) { @posts.limit_value }
+node(:total_pages) { (@posts.offset_value / @posts.limit_value) + 1 }
+node :items do
+  @posts.map do |p|
+    partial 'posts/post', object: p, root: false
+  end
 end
-node :title do |p|
-  strip_tags(p.title)
-end
-node :markdown do |p|
-  markdown(p.content)
-end
-node :truncate do |p|
-  truncate(strip_tags(markdown(p.content)))
-end
+

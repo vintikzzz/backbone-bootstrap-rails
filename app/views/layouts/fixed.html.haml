@@ -9,19 +9,15 @@
     /[if lt IE 9]
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
     = stylesheet_link_tag "application", :media => "all"
-    = javascript_include_tag "application"
+    = requirejs_include_tag "application"
+    :javascript
+      var vars = #{ render(file: "application.json.rabl") }
     -# %link(href="images/favicon.ico" rel="shortcut icon")
     -# %link(href="images/apple-touch-icon.png" rel="apple-touch-icon")
     -# %link(href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72")
     -# %link(href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114")
 
   %body
-    :javascript
-      var vars = #{ render(file: "application.json.rabl") }
-      window.currentUser = new BackboneTwitterBootstrap.Models.User(vars.currentUser)
-      window.guest = new BackboneTwitterBootstrap.Models.User(vars.guestUser)
-      window.token = new BackboneTwitterBootstrap.Models.Token()
-      window.posts = new BackboneTwitterBootstrap.Collections.PostsCollection(vars.posts)
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
@@ -42,7 +38,12 @@
           .span3
             %h3 Admin access 
             %br
-            %p email: test@test.test
+            %p email: admin@test.test
+            %p password: 123456
+            %br
+            %h3 User access 
+            %br
+            %p email: user@test.test
             %p password: 123456
     
       %footer

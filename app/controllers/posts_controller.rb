@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
   def index
-    @posts = Post.order_by([:created_at, :desc])
+    @posts = Post.order_by([:created_at, :desc]).page(params[:page])
   end
 
   def show
@@ -18,6 +18,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(params[:post])
+    @post.user = current_user
 
     if @post.save
       render action: "show", status: :created, location: @post

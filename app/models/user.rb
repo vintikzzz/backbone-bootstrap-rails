@@ -39,5 +39,6 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, :type => String
-  field :roles, :type => Array, :default => []
+  field :roles, :type => Array, :default => [:guest]
+  has_many :posts
 end

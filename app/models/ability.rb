@@ -8,6 +8,9 @@ class Ability
     if user.roles.include? :admin
       can :manage, Post
       can :destroy, :session
+    elsif user.roles.include? :user
+      can :manage, Post, :user_id => user.id
+      can :destroy, :session
     else
       can :read, Post
       can :create, :session

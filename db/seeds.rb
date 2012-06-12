@@ -2,7 +2,20 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
 u = User.new
-u.email = "test@test.test"
+u.email = "admin@test.test"
 u.password = "123456"
 u.roles << :admin
 u.save!
+
+u = User.new
+u.email = "user@test.test"
+u.password = "123456"
+u.roles << :user
+u.save!
+
+(1..30).each do |e|
+  p = Post.new
+  p.title = "Title #{e}"
+  p.content = "Content #{e}"
+  p.save!
+end

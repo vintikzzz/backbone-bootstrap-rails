@@ -17,9 +17,12 @@ group :assets do
   # gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier'
+  gem 'therubyracer'
+  gem 'less-rails'
 end
 
 gem 'awesome_print'
+gem 'kaminari'
 gem 'haml-rails'
 gem 'coffee-filter'
 gem 'rabl'
@@ -32,6 +35,7 @@ gem 'ruby-haml-js'
 gem 'devise'
 gem 'cancan'
 gem 'redcarpet'
+gem 'requirejs-rails', :git => 'git://github.com/vintikzzz/requirejs-rails.git'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

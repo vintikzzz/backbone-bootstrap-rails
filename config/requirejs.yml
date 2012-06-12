@@ -1,0 +1,24 @@
+modules:
+  - name: 'application'
+priority: ['application']
+shim: 
+  bootstrap:
+    - 'twitter/bootstrap/bootstrap-transition'
+    - 'twitter/bootstrap/bootstrap-alert'
+    - 'twitter/bootstrap/bootstrap-modal'
+    - 'twitter/bootstrap/bootstrap-dropdown'
+    - 'twitter/bootstrap/bootstrap-scrollspy'
+    - 'twitter/bootstrap/bootstrap-tab'
+    - 'twitter/bootstrap/bootstrap-tooltip'
+    - 'twitter/bootstrap/bootstrap-popover'
+    - 'twitter/bootstrap/bootstrap-button'
+    - 'twitter/bootstrap/bootstrap-collapse'
+    - 'twitter/bootstrap/bootstrap-carousel'
+    - 'twitter/bootstrap/bootstrap-typeahead'
+  backbone:
+    deps: ['underscore', 'jquery']
+    exports: 'Backbone'
+  backbone_rails_sync: ['backbone']
+  backbone_datalink: ['backbone']
+  backbone-rails: ['backbone', 'backbone_rails_sync', 'backbone_datalink']
+wrap: true
