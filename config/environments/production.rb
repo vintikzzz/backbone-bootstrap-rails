@@ -73,4 +73,5 @@ BackboneTwitterBootstrap::Application.configure do
   }
   config.action_mailer.delivery_method = :smtp  # config.active_record.auto_explain_threshold_in_seconds = 0.5
   config.action_mailer.default_url_options = { :host => 'backbone-bootstrap-rails.herokuapp.com' }
+  require 'newrelic_rpm'
 end

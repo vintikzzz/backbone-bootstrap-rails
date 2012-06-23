@@ -21,6 +21,10 @@ group :assets do
   gem 'less-rails'
 end
 
+group :production do
+  gem 'newrelic_rpm'
+end
+
 gem 'i18n-js'
 gem 'awesome_print'
 gem 'kaminari'
