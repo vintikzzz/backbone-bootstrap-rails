@@ -2,18 +2,19 @@ define [
   'jquery'
   'backbone'
   'bootstrap'
+  'helpers/layout'
   'views/posts/index_view'
   'views/posts/show_view'
   'views/posts/new_view'
   'views/posts/edit_view'
 ],
   
-($, Backbone, App) ->
+($, Backbone, App, Layout) ->
   class App.Routers.PostsRouter extends Backbone.Router
     initialize: (options) ->
-      @root = $("#content")
       @user = options.user
       @posts = options.posts
+      @user.on('change', => @posts.fetch())
 
     routes:
       "posts/new"              : "newPost"
@@ -26,25 +27,25 @@ define [
     newPost: ->
       View = require 'views/posts/new_view'
       @view = new View(collection: @posts, model: new @posts.model())
-      @root.html(@view.render().el)
+      Layout.setContent(@view)
 
     index: (page) ->
       @posts.setPage(page) if page?
       View = require 'views/posts/index_view'
       @view = new View(posts: @posts, user: @user)
-      @root.html(@view.render().el)
+      Layout.setContent(@view)
 
     show: (id) ->
       View = require 'views/posts/show_view'
       post = this.getPost(id)
       @view = new View(model: post)
-      @root.html(@view.render().el)
+      Layout.setContent(@view)
 
     edit: (id) ->
       View = require 'views/posts/edit_view'
       post = this.getPost(id)
       @view = new View(model: post)
-      @root.html(@view.render().el)
+      Layout.setContent(@view)
 
     getPost: (id) ->
       post = @posts.get(id)

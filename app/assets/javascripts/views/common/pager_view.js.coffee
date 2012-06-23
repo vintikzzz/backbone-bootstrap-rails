@@ -2,10 +2,11 @@ define [
   'jquery'
   'backbone'
   'bootstrap'
+  'views/common/alert_view'
   'templates/common/pager'
-], ($, Backbone, App) ->
+], ($, Backbone, App, AlertView) ->
 
-  class App.Views.Common.PagerView extends Backbone.View
+  class App.Views.Common.PagerView extends AlertView
     template: JST["templates/common/pager"]
 
     initialize: ->
@@ -13,6 +14,6 @@ define [
       @collection.on('remove', @render, this)
 
     render: ->
+      super
       $(@el).html(@template({pageInfo: @collection.toJSON().pageInfo, urlPrefix: @options.urlPrefix}))
-
       return this

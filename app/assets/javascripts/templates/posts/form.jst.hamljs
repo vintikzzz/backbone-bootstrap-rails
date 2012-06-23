@@ -1,15 +1,15 @@
-%form#edit-post{name: "post"}
+%form#post{name: "post"}
   %fieldset
-    %legend Edit
+    %legend= this.model.isNew() ? 'New' : 'Edit'
     .control-group
       %label.control-label{for: "title"} Title:
       .controls
-        %input#title.span6{name: "title", type: "text", value: title}
+        %input#title.span6{name: "title", type: "text", value: title || '' }
 
     .control-group
       %label.control-label{for: "content"} Content:
       .controls
-        %textarea#content.span6{name: "content", rows: 15}= content
+        %textarea#content.span6{name: "content", rows: 15}= content || ''
 
     .form-actions
       %input.btn.btn-primary{type: "submit"}

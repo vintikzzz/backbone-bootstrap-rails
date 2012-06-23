@@ -1,0 +1,12 @@
+ru:
+  sign_in: 'Вход'
+  sign_up: 'Регистрация'
+  remember_me: 'Запомнить меня'
+  sign_out: 'Выход'
+  forgot_password: 'Забыли свой пароль?'
+  confirm: 'Не получили письмо с инструкцией подтверждения регистрации?'
+  email: 'Адрес эл.почты'
+  password: 'Пароль'
+  confirm_password: 'Подтверждение пароля'
+  change_password: 'Поменять свой пароль'
+  new_password: 'Новый пароль'

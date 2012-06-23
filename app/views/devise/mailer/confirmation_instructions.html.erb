@@ -1,0 +1,5 @@
+<p>Добро пожаловать <%= @resource.email %>!</p>
+
+<p>Для активации своего акаунта перейдите по ссылке:</p>
+
+<p><%= link_to 'Подтвердить акаунт', "http://" + Rails.configuration.action_mailer.default_url_options[:host] + "/#/confirm?token=" + @resource.confirmation_token %></p>

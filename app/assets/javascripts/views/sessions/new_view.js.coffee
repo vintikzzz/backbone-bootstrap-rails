@@ -3,37 +3,16 @@ define [
   'backbone'
   'bootstrap'
   'models/session'
-  'views/common/error_view'
+  'views/common/form_view'
   'templates/sessions/new'
-], ($, Backbone, App, Session, ErrorView) ->
+  'i18n'
+], ($, Backbone, App, Session, FormView) ->
 
-  class App.Views.Sessions.NewView extends ErrorView
+  class App.Views.Sessions.NewView extends FormView
     template: JST["templates/sessions/new"]
 
-    events:
-      "submit #new-session": "save"
-
-    save: (e) ->
-      e.preventDefault()
-      e.stopPropagation()
-
-      @model.unset("errors", silent: true)
-
-      @model.save(null,
-        success: (session) =>
-          @options.user.id = session.id
-          @options.user.fetch()
-          @options.token.fetch()
-          @session = new Session(@options.user)
-          window.location.hash = "/posts"
-
-        error: (post, jqXHR) =>
-          @model.set({errors: $.parseJSON(jqXHR.responseText)})
-      )
-
-    render: ->
-      $(@el).html(@template(@model.toJSON() ))
-
-      this.$("form").backboneLink(@model)
-
-      return this
+    success: (session) ->
+      @options.user.id = session.id
+      @options.user.fetch()
+      @addSuccessAlert(I18n.t('devise.sessions.signed_in'))
+      window.location.hash = "/posts"

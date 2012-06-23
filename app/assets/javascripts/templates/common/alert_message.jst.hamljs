@@ -1,0 +1,4 @@
+- className = 'alert-' + type
+.alert.fade.in{class: className}
+  %a.close{data-dismiss: "alert", href:"#"} &times;
+  = message

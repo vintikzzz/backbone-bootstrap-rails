@@ -15,9 +15,12 @@ shim:
     - 'twitter/bootstrap/bootstrap-collapse'
     - 'twitter/bootstrap/bootstrap-carousel'
     - 'twitter/bootstrap/bootstrap-typeahead'
+    - 'i18n'
+    - 'i18n/translations'
   backbone:
     deps: ['underscore', 'jquery']
     exports: 'Backbone'
+
   backbone_rails_sync: ['backbone']
   backbone_datalink: ['backbone']
   backbone-rails: ['backbone', 'backbone_rails_sync', 'backbone_datalink']

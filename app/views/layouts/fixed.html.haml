@@ -10,8 +10,11 @@
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
     = stylesheet_link_tag "application", :media => "all"
     = requirejs_include_tag "application"
+
     :javascript
       var vars = #{ render(file: "application.json.rabl") }
+
+
     -# %link(href="images/favicon.ico" rel="shortcut icon")
     -# %link(href="images/apple-touch-icon.png" rel="apple-touch-icon")
     -# %link(href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72")

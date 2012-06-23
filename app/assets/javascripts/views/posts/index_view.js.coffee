@@ -4,10 +4,11 @@ define [
   'bootstrap',
   'views/posts/post_view',
   'views/common/pager_view',
+  'views/common/alert_view'
   'templates/posts/index'
-], ($, Backbone, App, PostView, PagerView) ->
+], ($, Backbone, App, PostView, PagerView, AlertView) ->
 
-  class App.Views.Posts.IndexView extends Backbone.View
+  class App.Views.Posts.IndexView extends AlertView
     template: JST["templates/posts/index"]
 
     initialize: () ->
@@ -30,5 +31,13 @@ define [
       $(@el).html(@template(posts: @options.posts.toJSON(), user: @options.user.toJSON() ))
       @addAll()
       @addPager()
+      @renderAlerts()
 
       return this
+
+    close: ->
+      super
+      @options.posts.off('reset', @render, this)
+      @options.user.off('change', @render, this)
+      @remove()
+      @off()

@@ -1,0 +1,10 @@
+%form#new-password{name: "password"}
+  %fieldset
+    %legend= I18n.t('forgot_password')
+    .control-group
+      %label.control-label{for: "email"}= I18n.t('email')
+      .controls
+        %input#email{name: "email", type: "text"}
+
+    .form-actions
+      %input#new-post.btn.btn-primary{type: "submit"}

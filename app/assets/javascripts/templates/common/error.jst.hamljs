@@ -1,3 +1,0 @@
-.alert.alert-error.fade.in
-  %a.close{data-dismiss: "alert", href:"#"} &times;
-  = error

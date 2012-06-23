@@ -2,31 +2,14 @@ define [
   'jquery'
   'backbone'
   'bootstrap'
-  'views/common/error_view'
-  'templates/posts/edit'
+  'views/common/form_view'
+  'templates/posts/form'
 ], ($, Backbone, App) ->
 
-  class App.Views.Posts.EditView extends App.Views.Common.ErrorView
-    template : JST["templates/posts/edit"]
+  class App.Views.Posts.EditView extends App.Views.Common.FormView
+    template: JST["templates/posts/form"]
 
-    events :
-      "submit #edit-post" : "update"
-
-    update : (e) ->
-      e.preventDefault()
-      e.stopPropagation()
-
-      @model.unset("errors", silent: true)
-
-      @model.save(null,
-        success : (post) =>
-          @model = post
-          window.location.hash = "/posts/#{@model.id}"
-        error: (post, jqXHR) =>
-          @model.set({errors: $.parseJSON(jqXHR.responseText)})
-      )
-
-    render : ->
-      $(@el).html(@template(@model.toJSON() ))
-      this.$("form").backboneLink(@model)
-      return this
+    success: (post) ->
+      @model = post
+      @addSuccessAlert('Post updated!')
+      window.location.hash = "/posts/#{@model.id}"

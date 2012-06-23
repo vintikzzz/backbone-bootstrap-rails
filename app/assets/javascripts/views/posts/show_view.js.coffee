@@ -2,11 +2,12 @@ define [
   'jquery'
   'backbone'
   'bootstrap'
-  'templates/posts/show'
   'views/common/confirm_view'
-], ($, Backbone, App, PostView, ConfirmView) ->
+  'views/common/alert_view'
+  'templates/posts/show'
+], ($, Backbone, App, ConfirmView, AlertView) ->
 
-  class App.Views.Posts.ShowView extends Backbone.View
+  class App.Views.Posts.ShowView extends AlertView
     template: JST["templates/posts/show"]
 
     events:
@@ -20,6 +21,7 @@ define [
       view.on('accept', ->
         @model.destroy()
         this.remove()
+        @addSuccessAlert('Post removed!')
         window.location.hash = "/posts/index"
       , this)
       $(@el).append(view.render().el)
@@ -28,4 +30,11 @@ define [
 
     render: ->
       $(@el).html(@template(post: @model.toJSON()))
+      @renderAlerts()
       return this
+
+    close: ->
+      super
+      @model.off('change', @render, this)
+      @remove()
+      @off()

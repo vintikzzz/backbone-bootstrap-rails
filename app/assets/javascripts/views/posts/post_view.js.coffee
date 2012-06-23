@@ -7,11 +7,12 @@ define ['jquery', 'backbone', 'bootstrap', 'views/common/confirm_view', 'templat
 
     tagName: "tr"
 
-    destroy: () ->
+    destroy: ->
       view = new ConfirmView()
       view.on('accept', ->
         @model.destroy()
         this.remove()
+        # @addSuccessAlert('Post removed!')
       , this)
       $(@el).append(view.render().el)
 

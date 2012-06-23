@@ -21,6 +21,7 @@ group :assets do
   gem 'less-rails'
 end
 
+gem 'i18n-js'
 gem 'awesome_print'
 gem 'kaminari'
 gem 'haml-rails'
@@ -36,6 +37,7 @@ gem 'devise'
 gem 'cancan'
 gem 'redcarpet'
 gem 'requirejs-rails', :git => 'git://github.com/vintikzzz/requirejs-rails.git'
+gem 'devise-i18n'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

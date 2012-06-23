@@ -1,0 +1,15 @@
+%form#edit-password{name: "password"}
+  %fieldset
+    %legend= I18n.t('change_password')
+    .control-group
+      %label.control-label{for: "password"}= I18n.t('new_password')
+      .controls
+        %input#password{name: "password", type: "password"}
+
+    .control-group
+      %label.control-label{for: "password_confirmation"}= I18n.t('confirm_password')
+      .controls
+        %input#password-configuration{name: "password_confirmation", type: "password"}
+
+    .form-actions
+      %input#new-post.btn.btn-primary{type: "submit"}

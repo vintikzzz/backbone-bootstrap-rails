@@ -12,7 +12,7 @@ define ['backbone'], (Backbone) ->
       this)
       this.on('remove', (m) ->
         if this.length == 0 and @page > 1
-          @page = @page - 1
+          @page++
         this.fetch()
       this)
 
@@ -74,4 +74,3 @@ define ['backbone'], (Backbone) ->
       return false  unless @pageInfo().prev
       @page = @page - 1
       @fetch()
-
