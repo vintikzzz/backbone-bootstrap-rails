@@ -64,12 +64,12 @@ BackboneTwitterBootstrap::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   config.action_mailer.smtp_settings = {
-    :port           => ENV['MAILGUN_SMTP_PORT'], 
-    :address        => ENV['MAILGUN_SMTP_SERVER'],
-    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => 'backbone-bootstrap-rails.herokuapp.com',
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
     :authentication => :plain,
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => 'backbone-bootstrap-rails.herokuapp.com'
   }
   config.action_mailer.delivery_method = :smtp  # config.active_record.auto_explain_threshold_in_seconds = 0.5
 end
