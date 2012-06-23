@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   layout 'fixed'
   before_filter :set_token
-  before_filter :set_locale
+  # before_filter :set_locale
   def set_token
     @token = form_authenticity_token
   end
