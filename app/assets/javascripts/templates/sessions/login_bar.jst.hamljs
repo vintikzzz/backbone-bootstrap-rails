@@ -1,7 +1,0 @@
-%ul.nav.pull-right
-  :if abilities.signout == true
-    %li 
-      %a{href: "#/signout"}= I18n.t('sign_out')
-  :if abilities.signin == true
-    %li 
-      %a{href: "#/signin"}= I18n.t('sign_in')

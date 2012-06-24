@@ -24,7 +24,8 @@ end
 group :production do
   gem 'newrelic_rpm'
 end
-
+gem 'tbone'
+gem 'tbone-devise'
 gem 'i18n-js'
 gem 'awesome_print'
 gem 'kaminari'
