@@ -24,8 +24,8 @@ end
 group :production do
   gem 'newrelic_rpm'
 end
-gem 'tbone'
-gem 'tbone-devise'
+gem 'tbone', '0.1.1', path: '~/Projects/tbone'
+gem 'tbone-devise', '0.1.1', path: '~/Projects/tbone-devise'
 gem 'i18n-js'
 gem 'awesome_print'
 gem 'kaminari'
