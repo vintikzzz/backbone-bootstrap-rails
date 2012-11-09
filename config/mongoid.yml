@@ -1,4 +1,4 @@
-<% uri = (ENV['MONGOLAB_URI'] rescue nil) || (ENV['MONGOLAB_URI'] rescue nil) || nil %>
+<% uri = (ENV['MONGOLAB_URI'] rescue nil) || (ENV['MONGOHQ_URL'] rescue nil) || nil %>
 
 test:
  sessions:
