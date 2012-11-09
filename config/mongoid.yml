@@ -18,7 +18,7 @@ production:
  sessions:
    default:
     <% unless uri.nil? %>
-      uri: <%= ENV['MONGOLAB_URI'] %>
+      uri: <%= uri %>
       options:
         skip_version_check: true
         safe: true
