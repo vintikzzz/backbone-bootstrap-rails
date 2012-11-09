@@ -7,7 +7,7 @@ define [
 ], ($, Backbone, App) ->
 
   class App.Views.Posts.NewView extends App.Views.Common.FormView
-    template: JST["templates/posts/form"]
+    template: JST["posts/form"]
 
     success: (post) ->
       @model = post

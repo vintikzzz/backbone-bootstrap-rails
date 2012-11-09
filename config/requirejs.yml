@@ -1,5 +1,10 @@
 modules:
   - name: 'application'
 priority: ['application']
+paths: 
+  without-my-bootstrap: 'bootstrap'
+  bootstrap: 'my-bootstrap'
+  i18n: 'i18n/translations'
+  i18n-lib: 'i18n'
 shim: 
-  i18n: ['i18n/translations']
+  i18n: ['i18n-lib']

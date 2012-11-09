@@ -8,7 +8,7 @@ define [
 ], ($, Backbone, App, ConfirmView, AlertView) ->
 
   class App.Views.Posts.ShowView extends AlertView
-    template: JST["templates/posts/show"]
+    template: JST["posts/show"]
 
     events:
       "click .destroy" : "destroy"
@@ -29,9 +29,9 @@ define [
       return false
 
     render: ->
-      $(@el).html(@template(post: @model.toJSON()))
+      $(@el).html(@template @)
       @renderAlerts()
-      return this
+      @
 
     close: ->
       super

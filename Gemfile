@@ -1,60 +1,25 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
 
-gem 'rails', '3.2.3'
+gem 'rails'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'twitter-bootstrap-rails'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platform => :ruby
-
-  gem 'uglifier'
-  gem 'therubyracer'
-  gem 'less-rails'
-end
-
-group :production do
-  gem 'newrelic_rpm'
-end
-gem 'tbone', '0.1.1', path: '~/Projects/tbone'
-gem 'tbone-devise', '0.1.1', path: '~/Projects/tbone-devise'
-gem 'i18n-js'
-gem 'awesome_print'
-gem 'kaminari'
-gem 'haml-rails'
-gem 'coffee-filter'
-gem 'rabl'
-gem 'jquery-rails'
-gem 'yajl-ruby'
+gem 'haml_coffee_assets'
 gem 'rails-backbone'
+gem 'tbone'
+gem 'tbone-devise'
+gem 'rabl'
 gem 'mongoid'
-gem 'bson_ext'
-gem 'ruby-haml-js'
-gem 'devise'
 gem 'cancan'
+gem 'devise'
+gem 'kaminari'
+gem 'twitter-bootstrap-rails'
 gem 'redcarpet'
-gem 'requirejs-rails', :git => 'git://github.com/vintikzzz/requirejs-rails.git'
 gem 'devise-i18n'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'requirejs-rails'
+gem 'haml-rails'
+gem 'i18n-js', '~>3.0.0rc2'
+gem 'jquery-rails'
+gem 'awesome_print'
+gem 'less-rails'
+gem 'therubyracer'
+gem 'uglifier'

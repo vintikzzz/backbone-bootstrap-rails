@@ -12,3 +12,6 @@ end
 node(:roles) do
   @user.roles
 end
+node :signed_in do
+  !@user.new_record?
+end

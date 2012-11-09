@@ -5,4 +5,5 @@ class Post
   field :title, :type => String
   field :content, :type => String
   belongs_to :user
+  attr_accessible :title, :content
 end

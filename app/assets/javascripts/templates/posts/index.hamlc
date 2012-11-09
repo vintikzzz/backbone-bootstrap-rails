@@ -6,14 +6,14 @@
       %th Title
       %th Content
       %th
-      :if user.abilities.manage_posts == true
+      - if @user.abilities.manage_posts == true
         %th
         %th
   %tbody
 
 
 %br
-:if user.abilities.manage_posts
+- if @user.abilities.manage_posts
   %a.btn.btn-primary{href: "#/posts/new"} New Post
   %br
   %br

@@ -1,5 +1,0 @@
-<p>Welcome <%= @resource.email %>!</p>
-
-<p>You can confirm your account email through the link below:</p>
-
-<p><%= link_to 'Confirm my account', "http://" + Rails.configuration.action_mailer.default_url_options[:host] + "/#/confirm?token=" + @resource.confirmation_token %></p>

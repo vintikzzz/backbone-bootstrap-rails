@@ -1,0 +1,35 @@
+%p
+  %strong Title:
+  %br
+  = @model.get('title')
+
+%p
+  %strong Content:
+  %br
+  != @model.get('markdown')
+
+%p
+  %strong CreatedAt:
+  %br
+  = @model.get('created_at')
+
+%p
+  %strong UpdatedAt:
+  %br
+  = @model.get('updated_at')
+
+%p
+  %strong User
+  %br
+  = @model.get('user_email')
+
+- id = @model.get('id')
+- index_link = "#/posts/index"
+- edit_link = "#/posts/" + id + "/edit"
+- destroy_link = "#/posts/" + id + "/destroy"
+
+.form-actions
+  %a.btn{href: index_link} Back
+  - if @model.get("is_manageable?")
+    %a.btn{href: edit_link} Edit
+    %a.destroy.btn.btn-danger{href: destroy_link} Destroy
