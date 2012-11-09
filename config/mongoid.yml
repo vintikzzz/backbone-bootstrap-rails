@@ -1,11 +1,29 @@
-development:
-  host: localhost
-  database: backbone_twitter_bootstrap_development
+<% uri = (ENV['MONGOLAB_URI'] rescue nil) || (ENV['MONGOLAB_URI'] rescue nil) || nil %>
 
 test:
-  host: localhost
-  database: backbone_twitter_bootstrap_test
+ sessions:
+   default:
+     database: backbone_twitter_bootstrap_test
+     hosts:
+       - localhost:27017
 
-# set these environment variables on your prod server
+development:
+ sessions:
+   default:
+     database: backbone_twitter_bootstrap_development
+     hosts:
+       - localhost:27017
+
 production:
-  uri: <%= ENV['MONGOHQ_URL'] %>
+ sessions:
+   default:
+    <% unless uri.nil? %>
+      uri: <%= ENV['MONGOLAB_URI'] %>
+      options:
+        skip_version_check: true
+        safe: true
+    <% else %>
+      database: backbone_twitter_bootstrap_production
+      hosts:
+       - localhost:27017
+    <% end %>

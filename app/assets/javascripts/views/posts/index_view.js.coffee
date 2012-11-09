@@ -9,17 +9,17 @@ define [
 ], ($, Backbone, App, PostView, PagerView, AlertView) ->
 
   class App.Views.Posts.IndexView extends AlertView
-    template: JST["templates/posts/index"]
+    template: JST["posts/index"]
 
     initialize: () ->
-      @options.posts.on('reset', @render, this)
-      @options.user.on('change', @render, this)
+      @options.posts.on('reset', @render, @)
+      @options.user.on('change', @render, @)
 
     addAll: () ->
       @options.posts.each(@addOne, this)
 
     addPager: ()->
-      view = new PagerView({collection: @options.posts, urlPrefix: '#posts/index?page='})
+      view = new PagerView({collection: @options.posts, urlPrefix: '#/posts/index?page='})
       $(@el).find("table").after(view.render().el)
 
 
@@ -32,8 +32,8 @@ define [
       @addAll()
       @addPager()
       @renderAlerts()
+      @
 
-      return this
 
     close: ->
       super

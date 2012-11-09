@@ -1,5 +1,4 @@
 object false
-@posts ||= locals[:object][:page]
 node(:current_page) { @posts.current_page }
 node(:total_items) { @posts.total_count }
 node(:per_page) { @posts.limit_value }
@@ -9,4 +8,3 @@ node :items do
     partial 'posts/post', object: p, root: false
   end
 end
-
